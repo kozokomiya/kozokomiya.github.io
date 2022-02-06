@@ -28,10 +28,10 @@ module.exports = {
     return {
       showMessage:    true,
       messages:       [],
-      who:            'Kozo',
-      skywayKey:      '',
-      roomName:       '',
-      roomMode:       '',       // mesh or sfu
+      who:            'User',
+      skywayKey:      '1a16602c-30ba-4963-9951-43efa2b67891',
+      roomName:       'flat_MyRoom',
+      roomMode:       'mesh',       // mesh or sfu
     }
   },
 
