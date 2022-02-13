@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <div id="app">
+        <vc-main-1></vc-main-1>
+    </div>
+
+    <!-- promise (IEに必要) -->
+    <script src="https://unpkg.com/es6-promise"></script>
+
+    <!-- vue -->
+    <script src="https://unpkg.com/vue"></script>
+
+    <!-- http-vue-loader -->
+    <script src="https://unpkg.com/http-vue-loader"></script>
+
+    <script type="text/javascript">
+        //メインコンポーネント
+        var vue = new Vue({
+            el: '#app',
+            components: {
+                'vc-main-1': httpVueLoader('vc-main-1.vue') //他階層にあるなら、('js/components/vc-main-1.vue')の様な指定も可能
+            }
+        });
+    </script>
+</body>
+
+</html>

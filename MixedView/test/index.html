@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-with, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="content-type" content="text/html; charset = UTF-8">
-    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/browse/vue@next"></script>
     <script src="https://unpkg.com/http-vue-loader"></script>
     <script src="https://cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
     <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
@@ -14,7 +14,8 @@
     <div id="app">
       <thetalive />
     </div>
-    <script type="text/javascript">
+    <script type="module">
+      import Vue from 'vue'
       Vue.use(httpVueLoader)
       Vue.config.productionTip = false
       Vue.config.ignoredElements = [
@@ -30,7 +31,7 @@
       new Vue({
         el: '#app',
         components: {
-          'thetalive': 'url:thetalive.vue'
+          'thetalive': httpVueLoader('thetalive.vue')
         }
       });
     </script>
