@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SkyWay - Room example</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://aframe.io/releases/0.9.2/aframe.min.js"></script>
+    <script src="./my-look-controls.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <p></p>
+      <div class="room">
+        <style>
+          #myEmbeddedScene {
+            width:720px;
+            height:360px;
+          }
+        </style>
+        <div>
+          <input type="text" size=5 placeholder="Room Name" id="js-room-id">
+          <button id="js-join-trigger">Join</button>
+          <button disabled id="js-leave-trigger">Leave</button>
+          <input type="text" size=5 id="js-bitrate-text">
+          <font size="1">bps
+          <span id="peerid">  (peer id:) </font> </span> </font>
+        </div>
+        <div>
+          <input type="text" size=5 placeholder="Room Name" id="js-room2-id">
+          <button id="js-join2-trigger">Join</button>
+          <button disabled id="js-leave2-trigger">Leave</button>
+          <input type="text" size=5 id="js-bitrate2-text">
+          <font size="1">bps
+          <span id="peer2id">  (peer id:) </font> </span> </font>
+        </div>
+        <div id="myEmbeddedScene" class="sphere-stream">
+          <a-scene embedded cursor-listener>
+            <a-entity id="ctl" oculus-touch-controls="hand: right"></a-entity>
+            <a-entity camera look-controls="hmdEnabled: false; reverseMouseDrag: true; touchEnabled: true" position="0 1.6 0">
+              <a-entity cursor="rayOrigin: mouse">
+              </a-entity>
+            </a-entity>
+            <a-assets>
+              <video id="js-sphere-stream" autoplay loop crossorigin="anonymous"></video>
+              <video id="js-flat-stream" autoplay loop crossorigin="anonymous"></video>
+            </a-assets>
+            <a-entity id="vr-monitor" material="shader: flat; src: #js-flat-stream"
+                      geometry="primitive: plane; width: 320.09; height: 180.05;"
+                      position="-1.24 -2.87 -200.00" rotation="0 0 0">
+            </a-entity>
+            <a-videosphere src="#js-sphere-stream" rotation="0 270 0"></a-videosphere>
+          </a-scene>
+        </div>
+        <div>
+          <pre class="messages" id="js-messages"></pre>
+        </div>
+      </div>
+    </div>
+    <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
+    <script src="../_shared/key.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>
