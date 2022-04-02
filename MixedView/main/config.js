@@ -1,2 +1,2 @@
-window.__ROOM1_NAME__ = 'dev1';
-window.__ROOM2_NAME__ = 'dev2';
+window.__ROOM1_NAME__ = 'ThetaRoom';
+window.__ROOM2_NAME__ = 'FlatRoom';
