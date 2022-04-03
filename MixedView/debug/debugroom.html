@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MixedView - No Aframe mode</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="debugroom-container">
+      <div class="debug-room">
+        <div id="debugroom-controls">
+          <div>
+            <button id="js-join-trigger">Join</button>
+            <button id="js-leave-trigger">Leave</button>
+            &emsp;&emsp;
+            <button style="display:none" id="js-flip-btn">flip</button>
+            <button style="display:none" id="js-mute-on-btn">Mute On</button>
+            <button style="display:none" id="js-mute-off-btn">Mute Off</button>
+          </div>
+        </div>
+        <div class="debug-sphere-video">
+          <video id="js-sphere-stream" autoplay loop crossorigin="anonymous"></video>
+        </div>
+        <div></div>
+        <div class="debug-flat-stream">
+          <video id="js-flat-stream" autoplay loop crossorigin="anonymous"></video>
+        </div>
+        <div id="pcroom2-messages">
+          <pre class="messages" id="js-messages"></pre>
+        </div>
+      </div>
+    </div>
+    <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
+    <script src="key.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
