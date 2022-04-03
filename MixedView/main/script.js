@@ -142,8 +142,8 @@ const Peer = window.Peer;
 
     // Render remote stream for new peer join in the room
     room1.on('stream', async stream => {
+      messages.textContent += `=== (${room1name}) new stream ${stream.peerId} ===\n`;
       if (stream.peerId.indexOf(sphere_peer_key) === 0) {
-        messages.textContent += `=== (${room1name}) new stream ${stream.peerId} ===\n`;
         sphereVideo.srcObject = stream;
         await sphereVideo.play().catch(console.error);
         sphereMonitor.setAttribute('color', "#FFF");
