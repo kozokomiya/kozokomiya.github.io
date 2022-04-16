@@ -75,7 +75,7 @@ video {
   width:720px;
   height:360px;
   text-align: left;
-  margin: 5 auto;
+  margin: 5;
   display: block;
 }
 
@@ -84,6 +84,7 @@ video {
   margin-right: auto;
 
   text-align: left;
+  margin: 5;
   width:480px;
   height:360px;
 
