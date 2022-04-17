@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MixedView - PC mode</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
+    <script src="my-look-controls.js"></script>
+  </head>
+  <body>  
+    <div class="pcroom2-container">
+      <div class="pcroom2-room">
+        <div id="pcrrom2-controls">
+          <div>
+            <button id="js-join-trigger">Join</button>
+            <button disabled id="js-leave-trigger">Leave</button>
+            &emsp;&emsp;
+            <button style="display:none" id="js-flip-btn">flip</button>
+            <button style="display:none" id="js-mute-on-btn">Mute On</button>
+            <button disabled style="display:none" id="js-mute-off-btn">Mute Off</button>
+          </div>
+        </div>
+        <div id="pcroom2-sphere-video" class="sphere-stream">
+          <a-scene embedded cursor-listener vr-mode-ui="enabled: false">
+            <a-entity id="ctl" oculus-touch-controls="hand: right"></a-entity>
+            <a-entity camera look-controls="hmdEnabled: false; reverseMouseDrag: true; touchEnabled: true" position="0 1.6 0">
+              <a-entity cursor="rayOrigin: mouse">
+              </a-entity>
+            </a-entity>
+            <a-entity id="js-flat-frame" visible=false position="-1.24 -2.87 -200" rotation="0 0 0">
+              <a-plane color="#0C0" position="   0  89 0" width="320" height="  2" ></a-plane>
+              <a-plane color="#0C0" position=" 159   0 0" width="  2" height="180" ></a-plane>
+              <a-plane color="#0C0" position="   0 -89 0" width="320" height="  2" ></a-plane>
+              <a-plane color="#0C0" position="-159   0 0" width="  2" height="180" ></a-plane>
+            </a-entity>
+            <a-entity id="flat-monitor" visible=false material="shader: flat; color: #666;"
+                      geometry="primitive: plane; width: 205.72; height: 115.72;"
+                      position="-9.17 -1.88 -180" rotation="0 0 0">            
+            <a-assets>
+              <video id="js-sphere-stream" autoplay loop crossorigin="anonymous"></video>
+              <video id="js-flat-stream" autoplay loop crossorigin="anonymous"></video>
+            </a-assets>
+            <a-videosphere id="sphere-monitor" color="#999" rotation="0 90 0"></a-videosphere>
+          </a-scene>
+        </div>
+        <div id="pcroom2-messages">
+          <pre class="messages" id="js-messages"></pre>
+        </div>
+      </div>
+    </div>
+    <script src="//cdn.webrtc.ecl.ntt.com/skyway-latest.js"></script>
+    <script src="key.js"></script>
+    <script src="config.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
