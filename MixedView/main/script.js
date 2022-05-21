@@ -1,5 +1,27 @@
 const Peer = window.Peer;
 
+function sleep(waitSec, callbackFunc) {
+ 
+  // 経過時間（秒）
+  var spanedSec = 0;
+
+  // 1秒間隔で無名関数を実行
+  var id = setInterval(function () {
+
+      spanedSec++;
+
+      // 経過時間 >= 待機時間の場合、待機終了。
+      if (spanedSec >= waitSec) {
+
+          // タイマー停止
+          clearInterval(id);
+
+          // 完了時、コールバック関数を実行
+          if (callbackFunc) callbackFunc();
+      }
+  }, 1000);
+}
+
 (async function main() {
   const joinTrigger = document.getElementById('js-join-trigger');
   const leaveTrigger = document.getElementById('js-leave-trigger');
@@ -101,10 +123,22 @@ const Peer = window.Peer;
     .getUserMedia(mediaType)
     .catch(console.error);
 
+  if (flipTrigger) {
+    flipTrigger.addEventListener('click', () => {
+      console.log("flipTrigger click()");
+
+      flatMonitorVisible = !flatMonitorVisible;
+      flatMonitor.setAttribute('visible', flatMonitorVisible);
+    });
+  }
+
+
   // Register join handler
   joinTrigger.addEventListener('click', () => {
     // Note that you need to ensure the peer has connected to signaling server
     // before using methods of peer instance.
+    console.log("joinTrigger click()");
+
     if (!peer1.open || !peer2.open) {
       return;
     }
@@ -292,18 +326,14 @@ const Peer = window.Peer;
     ctl.addEventListener('triggerdown', () => {
       if (flipTrigger) {
         if (flipTrigger.style.display != "none") {
+          console.log("triggerdown()");
           flatMonitorVisible = !flatMonitorVisible;
           flatMonitor.setAttribute('visible', flatMonitorVisible);
         }
       }
     });
 
-    if (flipTrigger) {
-      flipTrigger.addEventListener('click', () => {
-        flatMonitorVisible = !flatMonitorVisible;
-        flatMonitor.setAttribute('visible', flatMonitorVisible);
-      });
-    }
+
 
     if (flipBtn) {
       flipBtn.addEventListener('click', () => {
@@ -328,4 +358,10 @@ const Peer = window.Peer;
     }
 
   });  // joinTrigger.addEventListener('click', ())
+
+  // Auto Join after 5sec
+  // sleep(10, function() {
+  //   //console.log('past 5 seconds');
+  //   joinTrigger.click();
+  // });
 })();  // main()
