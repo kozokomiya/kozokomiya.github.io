@@ -2,21 +2,21 @@ const Peer = window.Peer;
 
 function sleep(waitSec, callbackFunc) {
  
-  // Œo‰ßŠÔi•bj
+  // çµŒéæ™‚é–“ï¼ˆç§’ï¼‰
   var spanedSec = 0;
 
-  // 1•bŠÔŠu‚Å–³–¼ŠÖ”‚ğÀs
+  // 1ç§’é–“éš”ã§ç„¡åé–¢æ•°ã‚’å®Ÿè¡Œ
   var id = setInterval(function () {
 
       spanedSec++;
 
-      // Œo‰ßŠÔ >= ‘Ò‹@ŠÔ‚Ìê‡A‘Ò‹@I—¹B
+      // çµŒéæ™‚é–“ >= å¾…æ©Ÿæ™‚é–“ã®å ´åˆã€å¾…æ©Ÿçµ‚äº†ã€‚
       if (spanedSec >= waitSec) {
 
-          // ƒ^ƒCƒ}[’â~
+          // ã‚¿ã‚¤ãƒãƒ¼åœæ­¢
           clearInterval(id);
 
-          // Š®—¹AƒR[ƒ‹ƒoƒbƒNŠÖ”‚ğÀs
+          // å®Œäº†æ™‚ã€ã‚³ãƒ¼ãƒ«ãƒãƒƒã‚¯é–¢æ•°ã‚’å®Ÿè¡Œ
           if (callbackFunc) callbackFunc();
       }
   }, 1000);
@@ -201,7 +201,7 @@ function sleep(waitSec, callbackFunc) {
           flatFrame.setAttribute('visible', flatFrameVisible);
         }
         if (flipTrigger) {
-          flipTrigger.style.display = "";   // flipTriggerãƒœã‚¿ãƒ³è¡¨ç¤º
+          flipTrigger.style.display = "";   // flipTriggerç¹æ‡Šã¡ç¹ï½³é™¦ï½¨é‰ï½º
         }
 
         if (muteOn) {
@@ -254,7 +254,7 @@ function sleep(waitSec, callbackFunc) {
             flatFrame.setAttribute('visible', flatFrameVisible);
           }
           if (flipTrigger) {
-            flipTrigger.style.display = "none";   // flipTriggerãƒœã‚¿ãƒ³éè¡¨ç¤º
+            flipTrigger.style.display = "none";   // flipTriggerç¹æ‡Šã¡ç¹ï½³é«±æ«ï½¡ï½¨é‰ï½º
           }
           if (muteOn && muteOff) {
             muteOn.style.display = "none";
@@ -315,7 +315,7 @@ function sleep(waitSec, callbackFunc) {
       joinTrigger.disabled = "";  // enable joinButtun
       leaveTrigger.disabled = "disabled";
       if (flipTrigger) {
-        flipTrigger.style.display = "none";   // flipTriggerãƒœã‚¿ãƒ³éè¡¨ç¤º
+        flipTrigger.style.display = "none";   // flipTriggerç¹æ‡Šã¡ç¹ï½³é«±æ«ï½¡ï½¨é‰ï½º
       }
     }, { once: true });
 

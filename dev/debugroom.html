@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>MixedView - debug room for Skyway verifaction</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="debug-room">
+      <div class="debug-control">
+        <button id="js-join-trigger">Join</button>
+        <button id="js-leave-trigger">Leave</button>
+        &emsp;&emsp;
+      </div>
+      <div class="debug-omni-view">
+        <video id="js-omni-stream" autoplay loop crossorigin="anonymous"></video>
+      </div>
+      <div class="debug-detailed-view">
+        <video id="js-detailed-stream" autoplay loop crossorigin="anonymous"></video>
+      </div>
+      <div id="debug-messages">
+        <pre class="messages" id="js-messages"></pre>
+      </div>
+    </div>
+    <script src="//cdn.webrtc.ecl.ntt.com/skyway-4.4.4.min.js"></script>
+    <script src="./key.js"></script>
+    <script src="./script.js"></script>    
+  </body>
+</html>
+  

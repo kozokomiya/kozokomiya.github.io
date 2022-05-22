@@ -1,0 +1,77 @@
+/* normalize */
+body {
+  margin: 0;
+}
+
+/* global styles */
+video {
+  background-color: #111;
+  width: 100%;
+  height: 100%;
+}
+
+.heading {
+  text-align: left;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.note {
+  text-align: left;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 720px;
+}
+
+/* room */
+.room {
+  display: grid;
+  gap: 8px;
+  margin: 0 8px;
+}
+
+.room .messages {
+  background-color: #eee;
+  min-height: 100px;
+  padding: 8px;
+  margin-top: 0;
+}
+
+/* for pcroom2.html only */
+
+.debug-room {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.debug-control {
+  margin-bottom: 0.5rem;
+}
+
+.debug-omni-view {
+  width:400px;
+  height:200px;
+  text-align: left;
+  margin: 5;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.debug-detailed-view {
+  width:355px;
+  height:200px;
+  text-align: left;
+  margin: 5;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.messages {
+  background-color: #eee;
+  min-height: 100px;
+  padding: 8px;
+  margin-top: 0;
+}
