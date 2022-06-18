@@ -42,7 +42,7 @@ function sleep(waitSec, callbackFunc) {
   const room2name = window.__ROOM2_NAME__;
 
 
-  const sphere_peer_key = 'Sphere';
+  const sphere_peer_key = 'Omni';
   const flat_peer_key = 'Flat';
 
   const peer1 = new Peer({   // sphere view peer
