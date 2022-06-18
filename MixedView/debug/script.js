@@ -12,8 +12,8 @@ const Peer = window.Peer;
   const room1name = window.__ROOM1_NAME__;
   const room2name = window.__ROOM2_NAME__;
 
-  const sphere_peer_key = 'Sphere';
-  const flat_peer_key = 'Flat';
+  const sphere_peer_key = 'omni_';
+  const flat_peer_key = 'flat_';
 
   const peer1 = new Peer({   // sphere view peer
     key: window.__SKYWAY_KEY__,
