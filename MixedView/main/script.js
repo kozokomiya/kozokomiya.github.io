@@ -331,6 +331,7 @@ function sleep(waitSec, callbackFunc) {
           console.log("triggerdown()");
           flatMonitorVisible = !flatMonitorVisible;
           flatMonitor.setAttribute('visible', flatMonitorVisible);
+          flatFrame.setAttribute('visible', flatMonitorVisible);
         }
       }
     });
