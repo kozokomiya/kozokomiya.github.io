@@ -129,6 +129,8 @@ function sleep(waitSec, callbackFunc) {
 
       flatMonitorVisible = !flatMonitorVisible;
       flatMonitor.setAttribute('visible', flatMonitorVisible);
+      flatFrame.setAttribute('visible', flatMonitorVisible);
+
     });
   }
 
